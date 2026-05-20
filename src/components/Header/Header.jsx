@@ -1,5 +1,5 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, Link } from 'react-router-dom'
 import styles from './Header.module.scss'
 
 export default function Header() {
@@ -7,7 +7,7 @@ export default function Header() {
     <header className={styles.header}>
       <div className={styles.container}>
         <div className={styles.brand}>
-          <a href="/">MyPortfolio</a>
+          <Link to="/">MyPortfolio</Link>
         </div>
         <nav aria-label="Main navigation">
           <ul className={styles.navList}>

@@ -10,7 +10,7 @@ import styles from './App.module.scss'
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/PortfolioPM2026">
       <div className={styles.app}>
         <Header />
         <main className={styles.main}>
