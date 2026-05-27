@@ -1,9 +1,230 @@
-.grid {
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: 1fr;
+.projects {
+  background: linear-gradient(135deg, #e8d9cc 0%, #f0ebe6 100%);
+  padding: 3rem 1.5rem;
 }
 
-@media (min-width: 768px) {
-  .grid { grid-template-columns: repeat(3, 1fr); }
+.header {
+  max-width: 1100px;
+  margin: 0 auto 3rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.icon {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  background: #0066ff;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+
+.header h2 {
+  font-family: 'Red Hat Display', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #000;
+  margin: 0;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  gap: 3rem;
+}
+
+.project {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  transition: all 300ms ease;
+}
+
+.project:hover {
+  box-shadow: 0 12px 32px rgba(0,0,0,0.12);
+  transform: translateY(-2px);
+}
+
+.project.reverse {
+  direction: rtl;
+}
+
+.project.reverse > * {
+  direction: ltr;
+}
+
+.textCol {
+  padding: 2rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  position: relative;
+}
+
+.sidebar {
+  width: 4px;
+  height: 80px;
+  background: #0066ff;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.content {
+  flex: 1;
+}
+
+.title {
+  font-family: 'Red Hat Display', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #0066ff;
+  margin: 0 0 0.5rem 0;
+}
+
+.role {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #333;
+  letter-spacing: 0.08em;
+  margin: 0 0 1rem 0;
+}
+
+.desc {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #555;
+  margin: 0 0 1.5rem 0;
+}
+
+.detailsBtn {
+  background: transparent;
+  border: none;
+  color: #0066ff;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  padding: 0;
+  transition: all 200ms ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.detailsBtn:hover {
+  color: #0052cc;
+  transform: translateX(4px);
+}
+
+.imageCol {
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f9f9f9;
+  min-height: 400px;
+}
+
+.imagePlaceholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 6px;
+}
+
+.imagePlaceholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 400ms ease;
+}
+
+.project:hover .imagePlaceholder img {
+  transform: scale(1.05);
+}
+
+@media (max-width: 1024px) {
+  .project {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .project.reverse {
+    direction: ltr;
+  }
+
+  .imageCol {
+    order: -1;
+    min-height: 300px;
+  }
+
+  .textCol {
+    padding: 1.5rem;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .desc {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .projects {
+    padding: 2rem 1rem;
+  }
+
+  .header {
+    margin-bottom: 2rem;
+  }
+
+  .header h2 {
+    font-size: 2rem;
+  }
+
+  .container {
+    gap: 1.5rem;
+  }
+
+  .project {
+    border-radius: 6px;
+  }
+
+  .textCol {
+    padding: 1.25rem;
+    gap: 1rem;
+  }
+
+  .sidebar {
+    height: 60px;
+  }
+
+  .title {
+    font-size: 1.25rem;
+  }
+
+  .role {
+    font-size: 0.85rem;
+  }
+
+  .desc {
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+  }
+
+  .imageCol {
+    padding: 1.25rem;
+    min-height: 250px;
+  }
 }

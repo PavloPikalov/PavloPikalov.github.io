@@ -10,12 +10,14 @@ export default function Contact(){
     const form = formRef.current
     const subject = encodeURIComponent(form.subject.value)
     const body = encodeURIComponent(form.message.value)
-    window.location.href = `mailto:your@email.com?subject=${subject}&body=${body}`
+    window.location.href = `mailto:pablopikalow@gmail.com?subject=${subject}&body=${body}`
   }
 
   return (
     <section className={styles.contact} aria-label="Contact">
       <h2>Contact</h2>
+      <p>Kyiv, Ukraine • +380 73 315 9810 • <a href="mailto:pablopikalow@gmail.com">pablopikalow@gmail.com</a> • <a href="https://t.me/PavloPikalov" target="_blank" rel="noreferrer">t.me/PavloPikalov</a> • <a href="https://linkedin.com/in/pavlo-p-33577a19b" target="_blank" rel="noreferrer">linkedin.com/in/pavlo-p-33577a19b</a></p>
+
       <form ref={formRef} onSubmit={handleSubmit} className={styles.form}>
         <label>
           Name
