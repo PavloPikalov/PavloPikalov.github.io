@@ -1,6 +1,10 @@
 import React, { useState } from 'react'
 import Modal from '../../components/Modal/Modal'
 import styles from './Projects.module.scss'
+import dsDashboardImg from '../../assets/images/ds-dashboard.webp'
+import sbidImg from '../../assets/images/sbid.webp'
+import dsSwapImg from '../../assets/images/ds-swap.png'
+import { useScrollAnimation } from '../../hooks/useScrollAnimation'
 
 const projects = [
   {
@@ -29,7 +33,7 @@ const projects = [
         </p>
       </div>
     ),
-    image: 'https://via.placeholder.com/500x600?text=DS+Dashboard',
+    image: dsDashboardImg,
   },
   {
     id: 2,
@@ -59,7 +63,7 @@ const projects = [
         </ul>
       </div>
     ),
-    image: 'https://via.placeholder.com/500x600?text=SBID+Identity',
+    image: sbidImg,
   },
   {
     id: 3,
@@ -87,13 +91,14 @@ const projects = [
         </ul>
       </div>
     ),
-    image: 'https://via.placeholder.com/500x600?text=DS+Swap',
+    image: dsSwapImg,
   },
 ]
 
 export default function Projects(){
   const [modalOpen, setModalOpen] = useState(false)
   const [selectedProject, setSelectedProject] = useState(null)
+  const projectsRef = useScrollAnimation()
 
   const openModal = (project) => {
     setSelectedProject(project)
@@ -107,7 +112,7 @@ export default function Projects(){
 
   return (
     <>
-      <section className={styles.projects}>
+      <section className={styles.projects} ref={projectsRef} data-animate>
         <div className={styles.header}>
           <span className={styles.icon} aria-hidden="true">■</span>
           <h2>Projects</h2>

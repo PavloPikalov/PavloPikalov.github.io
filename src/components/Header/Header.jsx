@@ -19,7 +19,7 @@ export default function Header() {
               <NavLink to="/about" className={({isActive})=> isActive ? styles.active : ''}>About</NavLink>
             </li>
             <li>
-              <a href="mailto:pablopikalow@gmail.com" className={styles.navLink}>Resume</a>
+              <a href="/cv.pdf" download className={styles.navLink}>Resume</a>
             </li>
             <li>
               <NavLink to="/projects" className={({isActive})=> isActive ? styles.active : ''}>Projects</NavLink>

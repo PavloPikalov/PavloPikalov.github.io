@@ -1,8 +1,10 @@
 import React, { useRef } from 'react'
 import styles from './Contact.module.scss'
+import { useScrollAnimation } from '../../hooks/useScrollAnimation'
 
 export default function Contact(){
   const formRef = useRef(null)
+  const contactRef = useScrollAnimation()
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -14,7 +16,7 @@ export default function Contact(){
   }
 
   return (
-    <section className={styles.contact} aria-label="Contact">
+    <section className={styles.contact} aria-label="Contact" ref={contactRef} data-animate>
       <h2>Contact</h2>
       <p>Kyiv, Ukraine • +380 73 315 9810 • <a href="mailto:pablopikalow@gmail.com">pablopikalow@gmail.com</a> • <a href="https://t.me/PavloPikalov" target="_blank" rel="noreferrer">t.me/PavloPikalov</a> • <a href="https://linkedin.com/in/pavlo-p-33577a19b" target="_blank" rel="noreferrer">linkedin.com/in/pavlo-p-33577a19b</a></p>
 

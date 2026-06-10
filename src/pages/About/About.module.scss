@@ -1,51 +1,529 @@
 .about {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 3rem 1.5rem;
+  padding: 4rem 1.5rem;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  color: #1a1a1a;
 }
 
-.about h2 {
+/* ============================================
+   HERO SECTION
+   ============================================ */
+
+.heroSection {
+  margin-bottom: 5rem;
+  padding-bottom: 3rem;
+  border-bottom: 2px solid #e8eaed;
+}
+
+.heroContent {
+  margin-bottom: 2.5rem;
+}
+
+.heroHeadline {
   font-family: 'Red Hat Display', sans-serif;
-  font-size: 2.5rem;
+  font-size: clamp(2.5rem, 6vw, 4rem);
   font-weight: 900;
+  line-height: 1.1;
+  margin: 0 0 0.75rem 0;
+  color: #000;
+  letter-spacing: -1.5px;
+}
+
+.heroTagline {
+  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+  font-weight: 600;
+  color: #0066cc;
   margin: 0 0 1.5rem 0;
-  color: #000;
+  letter-spacing: -0.5px;
 }
 
-.about h3 {
-  font-family: 'Red Hat Display', sans-serif;
-  font-size: 1.35rem;
+.heroDivider {
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, #0066cc 0%, transparent 100%);
+  margin-bottom: 1.5rem;
+}
+
+.heroDescription {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #444;
+  max-width: 75ch;
+  margin: 0 0 2rem 0;
+}
+
+.heroParagraphs {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.heroBenefits {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.benefit {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+.benefitIcon {
+  color: #0066cc;
+  font-weight: bold;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* ============================================
+   PERFORMANCE SECTION - GRID LAYOUT
+   ============================================ */
+
+.performanceSection {
+  margin-bottom: 5rem;
+}
+
+.performanceHeader {
+  margin-bottom: 3rem;
+}
+
+.eyebrow {
+  display: block;
+  font-size: 0.75rem;
   font-weight: 700;
-  margin: 2rem 0 1rem 0;
-  color: #000;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #999;
+  margin-bottom: 0.5rem;
 }
 
-.about h4 {
+.eyebrowSeparator {
+  margin: 0 0.75rem;
+  color: #bbb;
+}
+
+.metricsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.75rem;
+  width: 100%;
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 640px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.metricCard {
+  background: linear-gradient(135deg, #f0f4ff 0%, #f8f9fa 100%);
+  border: 1px solid #e0e4ff;
+  border-radius: 12px;
+  padding: 2rem 1.5rem;
+  transition: all 250ms cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, box-shadow;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0, 102, 204, 0.12);
+    border-color: #d0d8ff;
+  }
+}
+
+.metricValue {
+  font-size: 2.75rem;
+  font-weight: 900;
+  color: #0066cc;
+  margin-bottom: 0.5rem;
+  font-family: 'Red Hat Display', sans-serif;
+  letter-spacing: -1px;
+}
+
+.metricTitle {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #000;
+  margin: 0 0 0.75rem 0;
+}
+
+.metricDescription {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #666;
+  margin: 0;
+}
+
+/* ============================================
+   ECOSYSTEM INTEGRATION SECTION
+   ============================================ */
+
+.ecosystemSection {
+  margin-bottom: 5rem;
+}
+
+.ecosystemIntro {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: #666;
+  max-width: 75ch;
+  margin-bottom: 2rem;
+}
+
+.streamGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  width: 100%;
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 640px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.streamCard {
+  background: white;
+  border: 1px solid #e8eaed;
+  border-radius: 10px;
+  padding: 1.5rem;
+  text-align: center;
+  transition: all 200ms ease;
+  will-change: transform, box-shadow;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(0, 102, 204, 0.1);
+    border-color: #d0d8ff;
+  }
+}
+
+.streamLabel {
   font-family: 'Red Hat Display', sans-serif;
   font-size: 1.1rem;
-  font-weight: 700;
-  margin: 1.25rem 0 0.5rem 0;
-  color: #0066ff;
+  font-weight: 800;
+  color: #0066cc;
+  margin-bottom: 0.5rem;
 }
 
-.about p {
+.streamDesc {
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: #888;
+  margin: 0;
+}
+
+/* ============================================
+   EXPERTISE SECTION
+   ============================================ */
+
+.sectionTitle {
+  font-family: 'Red Hat Display', sans-serif;
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  font-weight: 800;
+  margin-bottom: 2rem;
+  color: #000;
+  letter-spacing: -0.5px;
+}
+
+.expertiseSection {
+  margin-bottom: 5rem;
+}
+
+.tagsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.expertiseTag {
+  display: inline-block;
+  background: #f0f2f5;
+  border: 1px solid #d0d4da;
+  border-radius: 24px;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #333;
+  transition: all 150ms ease;
+  cursor: default;
+
+  &:hover {
+    background: #0066cc;
+    color: white;
+    border-color: #0066cc;
+  }
+}
+
+.techStackBtn {
+  display: inline-block;
+  padding: 0.875rem 1.5rem;
+  background-color: #0066cc;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 200ms cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, box-shadow;
+
+  &:hover {
+    background-color: #0052a3;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 102, 204, 0.3);
+  }
+
+  &:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 10px rgba(0, 102, 204, 0.2);
+  }
+
+  &:focus-visible {
+    outline: 2px solid #0066cc;
+    outline-offset: 2px;
+  }
+}
+
+/* ============================================
+   PERSONAL INTERESTS SECTION
+   ============================================ */
+
+.personalSection {
+  margin-bottom: 5rem;
+  background: #f8f9fa;
+  border-radius: 12px;
+  padding: 3rem 2rem;
+}
+
+.personalIntro {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #555;
+  max-width: 75ch;
+  margin-bottom: 2rem;
+}
+
+.personalGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  width: 100%;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.personalCard {
+  background: white;
+  border: 1px solid #e8eaed;
+  border-radius: 12px;
+  padding: 2rem;
+  transition: all 250ms cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, box-shadow;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+    border-color: #d0d4da;
+  }
+}
+
+.personalIcon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  display: inline-block;
+}
+
+.personalTitle {
+  font-family: 'Red Hat Display', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #000;
+  margin: 0 0 0.75rem 0;
+}
+
+.personalDescription {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: #666;
+  margin: 0;
+}
+
+/* ============================================
+   EDUCATION SECTION
+   ============================================ */
+
+.educationSection {
+  margin-bottom: 5rem;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid #e8eaed;
+}
+
+.educationGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 3rem;
+
+  h3 {
+    font-family: 'Red Hat Display', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #000;
+    margin: 0 0 1rem 0;
+  }
+}
+
+.noBulletList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  li {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 0.75rem;
+  }
+}
+
+/* ============================================
+   CTA SECTION
+   ============================================ */
+
+.ctaSection {
+  margin-top: 3rem;
+  margin-bottom: 0;
+}
+
+.ctaBox {
+  background: linear-gradient(135deg, #0066cc 0%, #0052a3 100%);
+  border-radius: 16px;
+  padding: 3rem 2rem;
+  text-align: center;
+  color: white;
+  box-shadow: 0 20px 60px rgba(0, 102, 204, 0.2);
+  transition: all 300ms cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, box-shadow;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 24px 72px rgba(0, 102, 204, 0.3);
+  }
+
+  @media (max-width: 768px) {
+    padding: 2rem 1.5rem;
+  }
+}
+
+.ctaHeadline {
+  font-family: 'Red Hat Display', sans-serif;
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-weight: 800;
+  margin: 0 0 1rem 0;
+  letter-spacing: -0.5px;
+}
+
+.ctaSubtitle {
   font-size: 1rem;
   line-height: 1.7;
-  color: #555;
-  margin: 0.75rem 0;
-  max-width: 65ch;
+  margin: 0 0 2rem 0;
+  opacity: 0.95;
+  max-width: 60ch;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.about ul {
-  list-style-position: inside;
-  color: #555;
-  line-height: 1.8;
-  margin: 0.75rem 0 1.5rem 0;
-}
-
-.about li {
-  margin: 0.5rem 0;
+.ctaButton {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background: white;
+  color: #0066cc;
+  border-radius: 8px;
+  font-weight: 700;
   font-size: 0.95rem;
+  text-decoration: none;
+  transition: all 200ms cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, box-shadow;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+
+  &:focus-visible {
+    outline: 2px solid white;
+    outline-offset: 2px;
+  }
+}
+
+/* ============================================
+   RESPONSIVE ADJUSTMENTS
+   ============================================ */
+
+@media (max-width: 640px) {
+  .about {
+    padding: 2rem 1rem;
+  }
+
+  .heroHeadline {
+    font-size: 1.75rem;
+  }
+
+  .heroTagline {
+    font-size: 1rem;
+  }
+
+  .heroDescription {
+    font-size: 0.95rem;
+  }
+
+  .heroSection {
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+  }
+
+  .performanceSection,
+  .expertiseSection,
+  .personalSection {
+    margin-bottom: 3rem;
+  }
+
+  .personalSection {
+    padding: 2rem 1.5rem;
+  }
+
+  .educationGrid {
+    gap: 2rem;
+  }
+
+  .ctaBox {
+    padding: 2rem 1.25rem;
+  }
+
+  .metricCard {
+    padding: 1.5rem 1rem;
+  }
+
+  .metricValue {
+    font-size: 2rem;
+  }
 }
 
 @media (max-width: 768px) {
