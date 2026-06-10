@@ -6,7 +6,7 @@
   "homepage": "https://PavloPikalov.github.io/PortfolioPM2026/",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && cp dist/index.html dist/404.html",
     "preview": "vite preview --port 4173",
     "deploy": "npm run build && gh-pages -d dist"
   },

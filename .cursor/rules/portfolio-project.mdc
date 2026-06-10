@@ -1,0 +1,39 @@
+---
+description: Portfolio project stack, structure, and conventions
+alwaysApply: true
+---
+
+# Portfolio Project
+
+Vite + React 18 portfolio for Pavlo Pikalov. Hosted on GitHub Pages at `/PortfolioPM2026/`.
+
+## Stack
+
+- React 18, React Router 6, Vite 5, SCSS modules (`*.module.scss`)
+- No TypeScript, no CSS-in-JS, no global component libraries
+
+## Key paths
+
+- Routes: `src/App.jsx` — `BrowserRouter basename="/PortfolioPM2026"`
+- Vite base: `vite.config.js` — `base: '/PortfolioPM2026/'` (must match router basename)
+- Pages: `src/pages/{Home,Projects,About,Contact}/`
+- Shared UI: `src/components/`
+- Static assets: `public/` (e.g. `cv.pdf`)
+
+## Conventions
+
+- Functional components only; colocate `Component.jsx` + `Component.module.scss`
+- Mobile-first SCSS; tablet/desktop breakpoint: `@media (min-width: 768px)`
+- Semantic HTML, ARIA labels on interactive elements, meaningful `alt` on images
+- Keep SEO-friendly markup: one `h1` per page section, descriptive headings
+
+## Deploy
+
+- Auto-deploy: push to `production` → `.github/workflows/deploy.yml`
+- GitHub Pages source must be **GitHub Actions** (not `gh-pages` branch)
+- SPA fallback: build copies `index.html` → `404.html` in CI
+
+## Do not change without reason
+
+- `base` / `basename` / `package.json` `homepage` — all must stay aligned for GitHub Pages
+- Do not add heavy dependencies for simple UI needs

@@ -1,0 +1,28 @@
+---
+description: Deployment workflow and README documentation standards
+globs: .github/workflows/**,README.md,package.json,vite.config.js
+alwaysApply: false
+---
+
+# Deployment & Documentation
+
+## GitHub Actions (`.github/workflows/deploy.yml`)
+
+- Trigger: `push` to `production` only
+- Use official Pages actions: `upload-pages-artifact` + `deploy-pages`
+- Required permissions: `contents: read`, `pages: write`, `id-token: write`
+- After `npm run build`, always: `cp dist/index.html dist/404.html` and `touch dist/.nojekyll`
+
+## README audience
+
+Write for two groups:
+
+1. **Non-technical reviewers** — live URL first, no install steps, CV/contact links
+2. **Developers** — Node install, `npm install`, `npm run dev`, troubleshooting table
+
+Keep commands copy-pasteable. Link to [nodejs.org](https://nodejs.org) for Node setup.
+
+## When editing deploy config
+
+- Node version in workflow should match README recommendation (20 LTS)
+- If repo name or Pages path changes, update together: `vite.config.js` `base`, `App.jsx` `basename`, `package.json` `homepage`
