@@ -25,4 +25,5 @@ Keep commands copy-pasteable. Link to [nodejs.org](https://nodejs.org) for Node 
 ## When editing deploy config
 
 - Node version in workflow should match README recommendation (20 LTS)
-- If repo name or Pages path changes, update together: `vite.config.js` `base`, `App.jsx` `basename`, `package.json` `homepage`
+- User-site repo (`username.github.io`): `base` is `'/'`, no router basename, homepage is `https://username.github.io/`
+- Project-site repo (`other-name`): `base` is `/other-name/`, basename matches, homepage includes subpath

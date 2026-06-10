@@ -5,7 +5,7 @@ alwaysApply: true
 
 # Portfolio Project
 
-Vite + React 18 portfolio for Pavlo Pikalov. Hosted on GitHub Pages at `/PortfolioPM2026/`.
+Vite + React 18 portfolio for Pavlo Pikalov. Hosted on GitHub Pages user site at `https://pavlopikalov.github.io/`.
 
 ## Stack
 
@@ -14,8 +14,8 @@ Vite + React 18 portfolio for Pavlo Pikalov. Hosted on GitHub Pages at `/Portfol
 
 ## Key paths
 
-- Routes: `src/App.jsx` — `BrowserRouter basename="/PortfolioPM2026"`
-- Vite base: `vite.config.js` — `base: '/PortfolioPM2026/'` (must match router basename)
+- Routes: `src/App.jsx` — `BrowserRouter` with no basename (user-site repo)
+- Vite base: `vite.config.js` — `base: '/'`
 - Pages: `src/pages/{Home,Projects,About,Contact}/`
 - Shared UI: `src/components/`
 - Static assets: `public/` (e.g. `cv.pdf`)

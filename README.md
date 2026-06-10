@@ -2,7 +2,7 @@
 
 Personal portfolio site for **Pavlo Pikalov**, Technical Project Manager. Built with React, Vite, and SCSS modules. Mobile-first, accessible, and SEO-friendly.
 
-**Live site:** [https://PavloPikalov.github.io/PortfolioPM2026/](https://PavloPikalov.github.io/PortfolioPM2026/)
+**Live site:** [https://pavlopikalov.github.io/](https://pavlopikalov.github.io/)
 
 ---
 
@@ -12,10 +12,10 @@ You do **not** need to install anything to review this portfolio.
 
 | What you want | What to do |
 |---------------|------------|
-| View the site | Open the [live link](https://PavloPikalov.github.io/PortfolioPM2026/) in any browser |
+| View the site | Open the [live link](https://pavlopikalov.github.io/) in any browser |
 | Download the CV | On the site, use the CV link, or open [`public/cv.pdf`](public/cv.pdf) in this repo |
-| See the source code | Browse files on [GitHub](https://github.com/PavloPikalov/PortfolioPM2026) — no setup required |
-| Contact Pavlo | Use the [Contact](https://PavloPikalov.github.io/PortfolioPM2026/contact) page or [LinkedIn](https://linkedin.com/in/pavlo-p-33577a19b) |
+| See the source code | Browse files on [GitHub](https://github.com/PavloPikalov/PavloPikalov.github.io) — no setup required |
+| Contact Pavlo | Use the [Contact](https://pavlopikalov.github.io/contact) page or [LinkedIn](https://linkedin.com/in/pavlo-p-33577a19b) |
 
 The site includes Home, Projects, About, and Contact sections. Pages are designed to work on phone, tablet, and desktop.
 
@@ -42,15 +42,15 @@ You should see version numbers (for example `v20.x.x`).
 
 **Option A — Download ZIP (no Git required)**
 
-1. Go to [https://github.com/PavloPikalov/PortfolioPM2026](https://github.com/PavloPikalov/PortfolioPM2026)
+1. Go to [https://github.com/PavloPikalov/PavloPikalov.github.io](https://github.com/PavloPikalov/PavloPikalov.github.io)
 2. Click **Code** → **Download ZIP**
 3. Unzip the folder and open Terminal in that folder
 
 **Option B — Clone with Git**
 
 ```bash
-git clone https://github.com/PavloPikalov/PortfolioPM2026.git
-cd PortfolioPM2026
+git clone https://github.com/PavloPikalov/PavloPikalov.github.io.git
+cd PavloPikalov.github.io
 ```
 
 ### 3. Install dependencies
@@ -69,7 +69,7 @@ This downloads the libraries the app needs. It may take a minute the first time.
 npm run dev
 ```
 
-Open the URL shown in the terminal (usually [http://localhost:5173/PortfolioPM2026/](http://localhost:5173/PortfolioPM2026/)).
+Open the URL shown in the terminal (usually [http://localhost:5173/](http://localhost:5173/)).
 
 Press `Ctrl+C` in the terminal to stop the server.
 
@@ -78,7 +78,7 @@ Press `Ctrl+C` in the terminal to stop the server.
 | Command | Purpose |
 |---------|---------|
 | `npm run build` | Create an optimized production build in `dist/` |
-| `npm run preview` | Preview the production build locally at [http://localhost:4173/PortfolioPM2026/](http://localhost:4173/PortfolioPM2026/) |
+| `npm run preview` | Preview the production build locally at [http://localhost:4173/](http://localhost:4173/) |
 
 ---
 
@@ -136,7 +136,7 @@ This builds locally and pushes the `dist/` folder to the `gh-pages` branch using
 
 - **Styles:** One `.module.scss` file per component; mobile-first breakpoints at `768px`
 - **Accessibility:** Semantic HTML, ARIA where needed, keyboard-friendly navigation
-- **Routing:** `BrowserRouter` basename and Vite `base` must stay in sync (`/PortfolioPM2026/`)
+- **Routing:** User-site repo (`username.github.io`) is served at `/` — Vite `base` is `'/'` and `BrowserRouter` has no basename
 - **SEO:** Page title and meta tags in `index.html`; meaningful headings and alt text in components
 
 ---
@@ -146,7 +146,8 @@ This builds locally and pushes the `dist/` folder to the `gh-pages` branch using
 | Problem | Fix |
 |---------|-----|
 | `command not found: npm` | Install Node.js from [nodejs.org](https://nodejs.org) and restart the terminal |
-| Blank page locally | Use the full URL with `/PortfolioPM2026/` (see `vite.config.js`) |
+| Blank page on live site | In GitHub **Settings → Pages**, set source to **GitHub Actions** (not “Deploy from branch”), then re-run the deploy workflow |
+| Old `/PortfolioPM2026/` URL 404 | Repo was renamed to `PavloPikalov.github.io` — use [https://pavlopikalov.github.io/](https://pavlopikalov.github.io/) instead |
 | `npm install` fails | Use Node 20+, delete `node_modules`, run `npm install` again |
 | Deploy workflow fails | In repo **Settings → Pages**, set source to **GitHub Actions** |
 | Page refresh 404 on live site | Workflow copies `index.html` to `404.html` for SPA routing — redeploy if missing |
